@@ -1,0 +1,24 @@
+:root {
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+  --clr-base_logo: #d4313d; 
+  --clr-base: #F2C2E5; 
+  --clr-primary: #3D58F2; 
+  --clr-complementary: ##04BFAD; 
+  --clr-third: #027368; 
+  --clr-four: #04D9B2; 
+  --clr-five: #F2E635; 
+  /* color-scheme: dark; */
+}
+
+header {
+  background: var(--clr-primary);
+  color: #f4f4f4;
+}

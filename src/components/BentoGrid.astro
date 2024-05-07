@@ -1,0 +1,15 @@
+---
+
+import BentoGridItems from './BentoGridItems.astro';
+
+interface Props {
+  section?: string
+}
+
+const { section } = Astro.props; 
+
+---
+
+<section class="h-[60rem] w-full my-[1rem] mx-auto grid grid-cols-2 grid-rows-2 md:grid-cols-5 gap-4 p-[2rem]">
+  <BentoGridItems title='Bento Grid E-commerce' />
+</section>

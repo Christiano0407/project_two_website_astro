@@ -1,0 +1,57 @@
+---
+
+interface Props {
+  title?: string, 
+  class?:string
+}
+
+const { title } = Astro.props; 
+
+---
+
+<div class="h-auto max-w-full col-span-2 md:col-span-3 row-start-1 row-end-3 relative">
+  <h2 class="absolute z-10 text-base md:text-[2.8rem] md:font-black  top-[15rem] left-10 uppercase leading-[1.5]">A Simple Life <br> with a Closet</h2>
+  
+  <span class="absolute z-10 text-sm md:text-lg top-[18rem] left-10">Clothes & Color</span>
+  
+  <a href="#" class="absolute w-gull h-full">
+    <figure class="w-full h-full">
+        <img id="" class="w-full h-full object-cover border outline-none rounded-[1rem]" src="../../public/img/web/web_3.jpg" alt="image Intro">
+    </figure>
+  </a>
+  
+  <div class="absolute bg-[#3D58F2] bottom-[10rem] left-[5rem] w-[15rem] flex items-center justify-around border outline-none rounded-[1rem]">
+    <div class="flex flex-col p-3">
+      <p class="my-1 text-white">Clothes</p>
+      <p class="my-1 text-white ">All Products</p>
+    </div>
+    <a class="text-white">
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-garden-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6 8v11a1 1 0 0 0 1.806 .591l3.694 -5.091v.055" /><path d="M6 8h15l-3.5 7l-7.1 -.747a4 4 0 0 1 -3.296 -2.493l-2.853 -7.13a1 1 0 0 0 -.928 -.63h-1.323" />
+      </svg>
+    </a>
+  </div>
+
+  <button class="absolute p-2 rounded-lg  bottom-[10rem] right-[8rem] w-[5rem] h-[5rem] border-2 border-white flex justify-center items-center">
+    <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
+    </svg>    
+  </button>
+</div>
+
+<div class="h-auto max-w-full col-span-2 md:col-start-4  md:col-end-6  md:row-start-1  md:row-end-2 relative">
+  <h3 class="absolute z-10 text-base md:text-[1.8rem] md:font-black  top-[10rem]  md:top-[15rem] left-10 uppercase text-white">See Our Models</h3>
+  <figure class="w-full h-full">
+    <img class="w-full h-full bg-cover brightness-50 border outline-none rounded-[1rem]" src="../../public/img/web/web_1.jpg" alt="">
+  </figure>
+  <a class="absolute bottom-[5rem] right-[5rem] text-white">
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-forward"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" /></svg>
+  </a>
+</div>
+
+<div class="h-auto max-w-full col-span-2 p-[1rem] bg-[#04D9B2] relative border outline-none rounded-[1rem]">
+  <h3 class="absolute font-black bottom-[5rem] left-[2.5rem] text-[4rem]">Contact Us</h3>
+  <span class="absolute font-medium top-[3rem] left-[2.5rem] text-[1.6rem]">Have Some Questions?</span>
+  <a class="absolute text-white top-[3rem] right-[3rem]">
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-drone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10h4v4h-4z" /><path d="M10 10l-3.5 -3.5" /><path d="M9.96 6a3.5 3.5 0 1 0 -3.96 3.96" /><path d="M14 10l3.5 -3.5" /><path d="M18 9.96a3.5 3.5 0 1 0 -3.96 -3.96" /><path d="M14 14l3.5 3.5" /><path d="M14.04 18a3.5 3.5 0 1 0 3.96 -3.96" /><path d="M10 14l-3.5 3.5" /><path d="M6 14.04a3.5 3.5 0 1 0 3.96 3.96" /></svg>
+  </a>
+</div>
