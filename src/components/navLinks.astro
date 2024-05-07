@@ -1,9 +1,29 @@
 ---
-// === Links List: Nav Menu Mobile ===
+
+// === Links List: Nav Menu Mobile && SSG ===
+// > #each es una directiva en Astro que se utiliza para iterar sobre una lista y generar contenido repetido basado en los elementos de esa lista <
 client: true
+import { pages } from '../pages/[page].astro';
+
+const navLinks = [
+
+  { title: 'Home', href: '/' },
+  { title: 'Clothes', href: '/Clothes/' },
+  { title: 'Contact', href: '/Contact/' },
+  { title: 'Podcast', href: '/Podcast/' },
+  { title: 'Blog', href: '/Blog/' },
+  { title: 'Products', href: '/Products/' },
+  { title: '404', href: '/404/' }
+
+]; 
+
+const currentPages = pages.find(page => page.slug === Astro.params.page); 
+const currentTitle = currentPages ? currentPages.title : '/404/'; 
+
 ---
 
 <script>
+  
   const linkBtnDropDownMenu = document.querySelector("#dropdownNavbarLink"); 
   const navBarDropDown = document.querySelector("#dropdownNavbar"); 
 
@@ -15,19 +35,22 @@ client: true
 
 <div class="tems-center justify-between w-full hidden md:flex md:w-auto md:order-1" id="navbar-sticky">
   <ul id="idList" class="flex flex-col p-4 md:p-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:border-0 md:bg-white  ">
+    {#each navLinks as { title, href }}
+
     <li class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">
-      <a class="font-bold text-[1.6rem]" href="/">Home</a>
+      <a href={href} class="active={Astro.params.page === href} text-[1.6rem] font-bold">{title}</a>
     </li>
     <li class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-      <a class="text-[1.6rem] font-bold" href="/Clothes/" >Clothes</a>
+      <a href={href} class="active={Astro.params.page === href} text-[1.6rem] font-bold">{title}</a>
     </li>
     <li class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-      <a class="text-[1.6rem] font-bold" href="/Podcast/" >Podcast</a>
+      <a href={href} class="active={Astro.params.page === href} text-[1.6rem] font-bold">{title}</a>
     </li>
     <li class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-      <a class="text-[1.6rem] font-bold" href="/Blog/" >Blog</a>
+      <a href={href} class="active={Astro.params.page === href} text-[1.6rem] font-bold">{title}</a>
     </li>
-    <li class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><a class="text-[1.6rem] font-bold" href="/Contact/" >Contact</a>
+    <li class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+      <a href={href} class="active={Astro.params.page === href} text-[1.6rem] font-bold">{title}</a>
     </li>
     <li>
       <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex relative font-black text-[1.4rem] items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-white md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Products<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

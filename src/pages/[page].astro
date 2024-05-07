@@ -1,4 +1,46 @@
 ---
 
+// === Static site Generation (SSG) ===
+
+export const pages = [
+  {
+    slug: '/', 
+    title: 'Home Page Website', 
+    description: 'Welcome to the Home Page'
+  },
+  {
+    slug: '/Clothes/', 
+    title: 'Page To Clothes', 
+    description: 'Welcome To the Page Clothes'
+  }, 
+  {
+    slug: '/Contact/', 
+    title: 'Page To Contact', 
+    description: 'Welcome To the Page Contact'
+  }, 
+  {
+    slug: '/Podcast/', 
+    title: 'Page To Podcast', 
+    description: 'Welcome To the Page Podcast'
+  }, 
+  {
+    slug: '/Blog/', 
+    title: 'Blog Page', 
+    description: 'Welcome at the Blog'
+  }, 
+  {
+    slug: '/Products/', 
+    title: 'Page Of The Products', 
+    description: 'Welcome To the Page Products'
+  }, 
+]; 
+
+const { slug } = Astro.params; 
+const page = pages.find(page => page.slug === slug); // = Endpoint / Routing =
+if(!page) return Astro.redirect('/404'); 
+const { title, description } = page; 
+
+
+
 ---
 
