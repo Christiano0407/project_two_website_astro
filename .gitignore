@@ -155,3 +155,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 >>>>>>> a649412b7d1414aea4fb8d6a741dec5e24fc1c57
+
+# VSCODE
+
+.vscode
