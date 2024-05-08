@@ -2,43 +2,56 @@
 
 // === Static site Generation (SSG) ===
 
-export const pages = [
+export async function getStaticPaths() {
+  const pages = [
   {
     slug: '/', 
+    name: 'Home', 
     title: 'Home Page Website', 
     description: 'Welcome to the Home Page'
   },
   {
     slug: '/Clothes/', 
+    name: 'Clothes',
     title: 'Page To Clothes', 
     description: 'Welcome To the Page Clothes'
   }, 
   {
-    slug: '/Contact/', 
+    slug: '/Contact/',
+    name: 'Contact', 
     title: 'Page To Contact', 
     description: 'Welcome To the Page Contact'
   }, 
   {
     slug: '/Podcast/', 
+    name: 'Podcast',
     title: 'Page To Podcast', 
     description: 'Welcome To the Page Podcast'
   }, 
   {
     slug: '/Blog/', 
+    name: 'Blog',
     title: 'Blog Page', 
     description: 'Welcome at the Blog'
   }, 
   {
     slug: '/Products/', 
+    name: 'Products',
     title: 'Page Of The Products', 
     description: 'Welcome To the Page Products'
   }, 
 ]; 
 
-const { slug } = Astro.params; 
-const page = pages.find(page => page.slug === slug); // = Endpoint / Routing =
-if(!page) return Astro.redirect('/404'); 
-const { title, description } = page; 
+  return pages.map(( { slug, name, title, description } ) => ({
+     params: { slug }, 
+     props: { name, title, description }
+  })); 
+
+}
+
+/* const { name, title, description } = Astro.props; 
+
+const { slug } = Astro.params;  */
 
 
 
