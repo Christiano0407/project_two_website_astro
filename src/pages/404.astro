@@ -1,9 +1,12 @@
 ---
 
 import LayoutError from "../layouts/LayoutError.astro";
+import Error404 from "../components/Error404.astro";
 
 ---
 
 <LayoutError title="Layout to Page Error 404" description="Layout for Pages Error 404" >
-  <main id="idPageError" class=""></main>
+  <main id="idPageError" class="w-full h-full">
+   <Error404 title="Page Error 404 Not Found" pageName="Error 404 Not Found" />
+  </main>
 </LayoutError>

@@ -1,0 +1,16 @@
+---
+
+interface Props {
+ title?: string, 
+ pageName?: string
+}
+
+const { title, pageName } = Astro.props; 
+
+---
+
+<div class="w-full h-full">
+  <figure class="w-[100vw] h-[100vh]">
+    <img class="w-[100%] h-[100%] bg-cover bg-center bg-no-repeat " src="../../public/img/404/notFound404.jpg">
+  </figure>       
+</div>
