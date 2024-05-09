@@ -1,13 +1,10 @@
 import React from 'react';
-import type { Product, Category } from './structureData';
-
+import { Product, Category } from './structureData';
 
 interface Props {
-  product: Product; 
+  product: Product;
   category: Category;
-  [key: string]: any
 }
-
 
 export const ProductDetail: React.FC<Props> = ({ product, category }) => {
   return (
