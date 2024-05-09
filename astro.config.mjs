@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), react()], 
 
   pages: {
-    notFound: "/_404.astro" // servidor web para que redirija todas las solicitudes de páginas no encontradas a tu página 404 personalizing. 
+    notFound: "/NotFound404" // servidor web para que redirija todas las solicitudes de páginas no encontradas a tu página 404 personalizing. 
   }
   
 });
