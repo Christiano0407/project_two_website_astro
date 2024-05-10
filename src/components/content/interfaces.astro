@@ -1,0 +1,49 @@
+---
+
+import React, { useEffect, useState } from 'react';
+import { ProductDetail } from './detailsProducts.astro';
+import { productsApi } from '../../ts/api';
+import type { Product, Category } from '../../ts/structureData';
+
+
+export const ProductList: React.FC = () => {
+
+  const [products, setProducts] = useState<Product[]>([]); 
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data: Product[] = await productsApi(); 
+        setProducts(data); 
+
+      }catch(error) {
+        console.error(error); 
+      }
+    }; 
+    fetchProducts(); 
+  }, []); 
+
+  return ( 
+
+    <section>
+
+      <h1>List Of Products</h1>
+      
+      { 
+        products.length === 0 ? (
+          <p>Details of Product: Not Products Available</p>
+        ) : (
+          products.map( product => (
+            <ProductDetail  product={ product } category={ product.category as Category } />
+          ))
+        ) 
+      }
+    
+      </section>
+  
+  );
+
+
+}
+
+---
