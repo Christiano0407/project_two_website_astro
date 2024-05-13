@@ -8,7 +8,7 @@ interface Props {
 
 export const ProductDetail = ( { product , category }: Props ) => {
   return (
-    <div>
+    <div className=''>
       <h2>{product.title}</h2>
       <p>{product.price}</p>
       <p>{product.description}</p>

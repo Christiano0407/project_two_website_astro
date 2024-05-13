@@ -10,6 +10,6 @@ export interface Product {
   title: string;  
   price: number; 
   description: string;  
-  category: Category | undefined;  
+  category: Category;  
   images: string[]; 
 }

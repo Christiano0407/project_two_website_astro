@@ -16,8 +16,8 @@ export const ProductList = () => {
       } catch (error) {
         console.error(error);
       }
-    };
-    
+    };  
+
     fetchProducts();
   }, []);
 
@@ -25,10 +25,10 @@ export const ProductList = () => {
     <section>
       <h1>Products</h1>
       {products.length === 0 ? (
-        <p>No products available</p>
+        <p className='text-black text-base font-bold' >Don't products available</p>
       ) : (
         products.map((product) => (
-          <ProductDetail key={product.id} product={product} category={product.category as Category} />
+          <ProductDetail key={product.id} product={product} category={product.category} />
         ))
       )}
     </section>

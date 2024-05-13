@@ -1,24 +1,27 @@
 ---
 
-//import { Image } from "astro:assets"
+/* import { Image } from 'astro:assets';
+import Interfaces from "./content/interfaces.astro"; */
+
 
 interface Props {
   title?: string, 
   class?:string
 }
 
-/* type imageProps = {
+/* interface ImageProps {
    src: string; 
    alt: string; 
-} */
-
+}
+ */
 
 const { title } = Astro.props; 
 
-/* function newImg ({src, alt}: imageProps) {
-  return <Image src={src} alt={alt} />
-} */
-
+/* 
+function NewImages ({src, alt}: ImageProps) {
+  return  <Image src={src} alt={alt} />;
+}
+ */
 ---
 
 <div class="h-auto max-w-full col-span-2 md:col-span-3 row-start-1 row-end-3 relative">
@@ -28,8 +31,11 @@ const { title } = Astro.props;
   
   <a href="#" class="absolute w-gull h-full">
     <figure class="w-full h-full">
-        <img id="" class="w-full h-full object-cover border outline-none rounded-[1rem]" src="../assets/img/web/web_3.jpg" alt="image Intro">
-       <!-- <Image src="../assets/img/web/web_3.jpg" alt="Images product" /> -->
+        <img id="" class="w-full h-full object-cover border outline-none rounded-[1rem]" src="../../src/assets/img/web/web_3.jpg" alt="image Intro">
+      <!--  <NewImages
+        src="../assets/img/web/web_3.jpg" 
+        alt="Images product" 
+       /> -->
     </figure>
   </a>
   
@@ -54,7 +60,7 @@ const { title } = Astro.props;
 <div class="h-auto max-w-full col-span-2 md:col-start-4  md:col-end-6  md:row-start-1  md:row-end-2 relative">
   <h3 class="absolute z-10 text-base md:text-[1.8rem] md:font-black  top-[10rem]  md:top-[15rem] left-10 uppercase text-white">See Our Models</h3>
   <figure class="w-full h-full">
-    <img class="w-full h-full bg-cover brightness-50 border outline-none rounded-[1rem]" src="../assets/img/web/web_1.jpg" alt="images models">
+    <img class="w-full h-full bg-cover brightness-50 border outline-none rounded-[1rem]" src="../../src/assets/img/web/web_1.jpg" alt="images models">
   </figure>
   <a class="absolute bottom-[5rem] right-[5rem] text-white">
     <svg  xmlns="http://www.w3.org/2000/svg"  width="35"  height="35"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-forward"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11l4 4l-4 4m4 -4h-11a4 4 0 0 1 0 -8h1" /></svg>
