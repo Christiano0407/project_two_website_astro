@@ -12,6 +12,7 @@ export const productsApi = async (): Promise<Product[]> => {
   try {
 
     const response = await fetch('https://api.escuelajs.co/api/v1/products'); 
+    console.log(response); 
 
     if(!response.ok) {
       throw new Error("Failed...To Fetch The API")
@@ -33,7 +34,7 @@ export const productsApi = async (): Promise<Product[]> => {
     return data */
 
   }catch(err) {
-    console.error(err);
+    console.error("We have a Error. Don't any Products", err);
     throw err; 
   }
   

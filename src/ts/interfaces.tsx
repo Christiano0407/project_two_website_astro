@@ -17,6 +17,7 @@ export const ProductList = () => {
         console.error(error);
       }
     };
+    
     fetchProducts();
   }, []);
 
