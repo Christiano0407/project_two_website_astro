@@ -18,9 +18,10 @@ export const productsApi = async (): Promise<Product[]> => {
       throw new Error("Failed...To Fetch The API")
     }
 
+    //const { products, categories } = await response.json(); 
     const { products, categories } : ApiResponse = await response.json(); 
 
-    const productWithCategory = products.map((product) => ({
+    const productWithCategory = products.map((product:any) => ({
       ...product,
       category: categories.find(category => category.id === product.category?.id || null )
     }))

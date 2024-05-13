@@ -1,7 +1,17 @@
 ---
 
-import { ProductList } from "../ts/interfaces";
+//import { ProductList } from "../ts/interfaces";
+import { fullProducts } from "../ts/apiContent";
+
+
+const products = await fullProducts(); 
 
 ---
 
-<ProductList /> 
+{
+  products.map(product => ( 
+    <div>
+      <span>{product.title}</span>
+    </div>
+  ))
+}
