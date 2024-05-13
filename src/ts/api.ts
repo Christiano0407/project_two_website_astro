@@ -22,8 +22,9 @@ export const productsApi = async (): Promise<Product[]> => {
 
     const productWithCategory = products.map((product) => ({
       ...product,
-      category: categories.find((category) => category.id === product.category?.id)
+      category: categories.find(category => category.id === product.category?.id || null )
     }))
+   /*  Esto asegura que se asigne un objeto vacío a category si no se encuentra una categoría coincidente, lo que evita el error en ProductDetail. */
 
     const plusProduct = productWithCategory.length > 0 ? productWithCategory : null;
     // - La razón por la que se usa plusProduct o null en este caso específico es para asegurarse de que la función siempre devuelva un array de productos (Product[]). -
