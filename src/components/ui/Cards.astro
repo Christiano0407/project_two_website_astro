@@ -1,0 +1,26 @@
+---
+
+import { fullProducts } from "../../ts/apiContent";
+
+
+const products = await fullProducts(); 
+
+---
+
+{
+  products.slice(0, 8).map(product => ( 
+    <div class="w-full border outline-none rounded-2xl p-3 flex flex-col transition-shadow hover:shadow-2xl">
+      <figure class="p-2">
+        <img class="w-full h-full object-cover bg-no-repeat bg-cover bg-center rounded-lg sm:aspect-square  md:aspect-video " src={product.images[0]} alt={product.title} />
+      </figure>
+      <div class="p-[1rem]">
+        <h3 class="text-[#111] font-bold text-lg my-[1rem] mx-auto">{product.title}</h3>
+        <p class="text-[#333] font-normal text-[0.8rem] my-0 mx-auto">{product.description}</p>
+      </div>
+      <div class="flex justify-between items-center p-3">
+        <span class="text-base font-medium">$ {product.price}</span>
+        <button class="bg-[3D58F2] border outline-none rounded-lg text-base font-bold p-[1rem] bg-[#3D58F2] text-[#f2f2f2]">Pay</button>
+      </div>
+    </div>
+  ))
+}
