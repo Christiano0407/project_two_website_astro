@@ -6,15 +6,19 @@ const categories = await  allCategory();
 
 ---
 
-{
-  categories.slice(0, 4).map(category => (
-    <div class="w-full p-[1rem]">
-      <div class="relative">
-        <figure class="w-full h-full">
-        <img src={category.image} class="w-full h-full object-cover bg-cover bg-no-repeat bg-center outline-none rounded-lg " />
-      </figure>
-      <span class="absolute z-10 text-[#f2f2f2] font-black text-lg md:text-[4rem] bottom-[50%] left-[25%] ">{category.name}</span>
-      </div>
-    </div>
-  ))
-}
+
+{ categories.slice(0, 4).map(category => (
+  <div class="p-[1rem]">
+   <div class="relative">
+    <figure class="w-full h-full">
+      <img
+        src={category.image}
+        class="w-full h-full object-cover bg-cover bg-no-repeat bg-center outline-none rounded-lg brightness-50"
+      />
+    </figure>
+    <span class="absolute z-10 text-[#f2f2f2] text-center font-black text-[2.8rem] md:text-[2.4rem] bottom-[50%] left-[35%] md:left-[25%] ">
+      {category.name}
+    </span>
+   </div>
+  </div>
+)) }
