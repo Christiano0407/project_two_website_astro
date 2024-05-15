@@ -1,9 +1,23 @@
 ---
 
-import { string } from "zod";
+import { z } from 'zod'; // = Type & Validation =
 
+
+const ProductScheme = z.object({
+  id: z.number(),
+  title: z.string(),
+  price: z.number(),
+  description: z.string(),
+  images: z.array(z.string())
+})
+
+const ProductsScheme = z.array(ProductScheme); 
 
 interface Props {
+  products: z.infer<typeof ProductsScheme>; 
+}
+
+/* interface Props {
   products: Array<{
     id: number;
     title: string;
@@ -11,7 +25,7 @@ interface Props {
     description: string;
     images: string[];
   }>;
-}
+} */
 
 const { products } = Astro.props; 
 

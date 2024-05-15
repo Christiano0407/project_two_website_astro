@@ -1,10 +1,24 @@
 ---
 
-interface Props {
+import { z } from 'zod'; // = Type & Validation =
+
+
+const CategoryScheme = z.object({
+  name: z.string(), 
+  image: z.string(),
+}); 
+//image: z.array(z.string()),
+const CategoriesScheme = z.array(CategoryScheme); 
+
+/* interface Props {
   categories: Array<{
    name: string; 
    image: string; 
   }>; 
+} */
+
+interface Props {
+  categories: z.infer<typeof CategoriesScheme>; 
 }
 
 const { categories } = Astro.props; 
