@@ -1,13 +1,18 @@
 ---
 
-import { allCategory } from '../../ts/apiCategory'; 
+interface Props {
+  categories: Array<{
+   name: string; 
+   image: string; 
+  }>; 
+}
 
-const categories = await  allCategory(); 
+const { categories } = Astro.props; 
 
 ---
 
 
-{ categories.slice(0, 4).map(category => (
+{categories.map(category => (
   <div class="p-[1rem]">
    <div class="relative">
     <figure class="w-full h-full">
@@ -21,4 +26,4 @@ const categories = await  allCategory();
     </span>
    </div>
   </div>
-)) }
+))}

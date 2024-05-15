@@ -4,9 +4,11 @@
 import Cards from './ui/Cards.astro';
 import CategoriesCards from './ui/CategoriesCards.astro';
 import { fullProducts } from "../ts/apiContent";
+import { allCategory } from '../ts/apiCategory'; 
 
 
 const products = await fullProducts(); 
+const categories = await  allCategory(); 
 
 ---
 
@@ -15,5 +17,5 @@ const products = await fullProducts();
 </section>
 
 <section class="w-full p-[1rem] my-[2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  grid-flow-row gap-5">
-  <CategoriesCards />
+  <CategoriesCards categories={categories.slice(0, 4)} />
 </section>
