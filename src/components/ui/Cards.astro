@@ -1,14 +1,23 @@
 ---
 
-import { fullProducts } from "../../ts/apiContent";
+import { string } from "zod";
 
 
-const products = await fullProducts(); 
+interface Props {
+  products: Array<{
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    images: string[];
+  }>;
+}
+
+const { products } = Astro.props; 
 
 ---
 
-{
-  products.slice(0, 8).map(product => ( 
+{products.map(product => ( 
     <div class="w-full border outline-none rounded-2xl p-3 flex flex-col transition-shadow hover:shadow-2xl">
       <figure class="p-2">
         <img class="w-full h-full object-cover bg-no-repeat bg-cover bg-center rounded-lg sm:aspect-square  md:aspect-video " src={product.images[0]} alt={product.title} />
@@ -22,5 +31,4 @@ const products = await fullProducts();
         <button class="bg-[3D58F2] border outline-none rounded-lg text-base font-bold p-[1rem] bg-[#3D58F2] text-[#f2f2f2]">Pay</button>
       </div>
     </div>
-  ))
-}
+  ))}
