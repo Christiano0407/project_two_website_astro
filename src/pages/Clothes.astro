@@ -6,13 +6,18 @@ import ProductSale from "../components/pages/ProductSale.astro";
 import TopStore from "../components/pages/TopStore.astro"; 
 import BannerStore from "../components/pages/BannerStore.astro";
 import Footer from "../components/Footer.astro";
+import { fullProducts } from "../ts/apiContent";
+
+
+const products = await fullProducts();
+
 
 ---
 
 <Layouts title="Layouts Pages" description="Pagination using Layouts with Pages" >
   <main class="w-full h-full">
     <HeroPage title="Hero Section To Page Clothes." description="Hero Section to Page Clothes Products" />
-    <ProductSale />
+    <ProductSale products={products.slice(0, 1)} />
     <TopStore />
     <BannerStore />
   </main>

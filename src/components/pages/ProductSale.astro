@@ -1,5 +1,56 @@
 ---
 
+import { z } from 'zod'; 
 
+
+const SchemeProduct = z.object({
+  id: z.string(),
+  title: z.string(),
+  price: z.number(), 
+  description: z.string(),
+  images: z.array(z.string())
+}); 
+
+const SchemesOfProducts = z.array(SchemeProduct); 
+
+interface Props {
+  products: z.infer<typeof SchemesOfProducts >; 
+}
+
+const { products } = Astro.props; 
 
 ---
+
+<div class="w-full p-[1rem] my-[2rem] mx-auto">  
+  {products.map(product => ( 
+    <div class="grid gap-4">
+      <div class="" >
+         <figure>
+          <img  class="h-auto max-w-full rounded-lg aspect-square md:aspect-video " src={product.images[1]} alt={product.title} />
+         </figure>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+         <div>
+            <figure>
+               <img class="h-auto max-w-full rounded-lg  aspect-square md:aspect-video " src={product.images[0]} alt={product.title}  />
+            </figure>
+         </div>
+         <div>
+            <figure>
+               <img class="h-auto max-w-full rounded-lg  aspect-square md:aspect-video " src={product.images[2]} alt={product.title} />
+            </figure>
+         </div>
+         <div>
+          <figure>
+               <img class="h-auto max-w-full rounded-lg  aspect-square md:aspect-video " src={product.images[0]} alt={product.title} />
+            </figure>
+         </div>
+         <div>
+          <figure>
+               <img class="h-auto max-w-full rounded-lg  aspect-square md:aspect-video " src={product.images[1]} alt={product.title} />
+            </figure>
+         </div>
+      </div>
+    </div>
+  ))}
+</div> 
