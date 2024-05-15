@@ -2,11 +2,19 @@
 
 import Layouts from "../layouts/Layouts.astro";
 import HeroPage from "../components/pages/HeroPage.astro";
+import ProductSale from "../components/pages/ProductSale.astro";
+import TopStore from "../components/pages/TopStore.astro"; 
+import BannerStore from "../components/pages/BannerStore.astro";
+import Footer from "../components/Footer.astro";
 
 ---
 
 <Layouts title="Layouts Pages" description="Pagination using Layouts with Pages" >
   <main class="w-full h-full">
     <HeroPage title="Hero Section To Page Clothes." description="Hero Section to Page Clothes Products" />
+    <ProductSale />
+    <TopStore />
+    <BannerStore />
   </main>
+  <Footer />
 </Layouts>
