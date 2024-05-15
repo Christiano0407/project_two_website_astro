@@ -3,11 +3,11 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 //import type { notFound } from 'astro:i18n';
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), 
-    react({
-     include: ['**/react/*'],
-  }),],
-
+  integrations: [tailwind(), react({
+    include: ['**/react/*']
+  }), mdx()]
 });
