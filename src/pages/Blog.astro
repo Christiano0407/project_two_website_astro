@@ -1,11 +1,18 @@
 ---
 
 import Layouts from "../layouts/Layouts.astro";
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
+/* export default defineConfig({
+  integrations: [mdx()],
+}); */
 
+import note from '../content/newsletters/note.mdx';
 ---
 
 <Layouts title="Layout to Page Blog" description="Page Website Blog">
   <main>
+  <!--   {note} -->
   </main>
 </Layouts>

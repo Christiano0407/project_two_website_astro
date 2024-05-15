@@ -49,5 +49,3 @@ Personalized fashion is on the rise, allowing consumers to create bespoke pieces
 Stay stylish and ahead of the trends!
 
 Warm regards,
-
-**The Fashion Trends Team**
