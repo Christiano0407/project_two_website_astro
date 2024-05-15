@@ -7,10 +7,12 @@ import TopStore from "../components/pages/TopStore.astro";
 import BannerStore from "../components/pages/BannerStore.astro";
 import Footer from "../components/Footer.astro";
 import { fullProducts } from "../ts/apiContent";
+import { usersAPI } from "../ts/apiCategory";
 
 
 const products = await fullProducts();
-
+const allProducts = await fullProducts(); 
+const users = await usersAPI();
 
 ---
 
@@ -18,7 +20,7 @@ const products = await fullProducts();
   <main class="w-full h-full">
     <HeroPage title="Hero Section To Page Clothes." description="Hero Section to Page Clothes Products" />
     <ProductSale products={products.slice(0, 1)} />
-    <TopStore />
+    <TopStore allProducts={allProducts.slice(0, 6)} />
     <BannerStore />
   </main>
   <Footer />

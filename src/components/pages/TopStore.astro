@@ -1,3 +1,40 @@
 ---
 
+import { z } from 'zod'; 
+
+
+const SchemesProductsAll = z.object({
+  id: z.string(),
+  title: z.string(),
+  price: z.number(), 
+  description: z.string(),
+  images: z.string()
+}); 
+//z.array(z.string())
+const SchemesOfAllProducts = z.array(SchemesProductsAll); 
+
+interface Props {
+  allProducts: z.infer<typeof SchemesOfAllProducts >; 
+}
+
+const { allProducts } = Astro.props;  
+
+
 ---
+
+
+<section class="w-full p-[2rem] mx-auto my-[2rem]">
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 grid-rows-1 md:grid-rows-2 gap-5 ">
+     {allProducts.map(user => (
+      <div class="">
+        <figure class="w-100% h-[20rem] ">
+         <img src={user.images} alt="" class="w-full h-full object-cover bg-cover bg-no-repeat bg-center aspect-square md:aspect-video " />
+        </figure>
+        <div class="p-[1rem] flex flex-col items-center">
+          <h2 class="">{user.title}</h2>
+        </div>
+      </div>
+     ))}
+  </div>
+  <div class=""></div>
+</section>
