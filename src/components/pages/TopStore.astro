@@ -1,7 +1,7 @@
 ---
 
 import { z } from 'zod'; 
-
+import imageCloset from '../../../src/assets/img/images/prod_2.png'; 
 
 const SchemesProductsAll = z.object({
   id: z.string(),
@@ -36,5 +36,57 @@ const { allProducts } = Astro.props;
       </div>
      ))}
   </div>
-  <div class=""></div>
+
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-5 my-[1rem] mx-auto">
+    { allProducts.map(product => (
+      <div class="w-full col-start-1 col-end-2 ">
+        <div class="relative bg-slate-400 ">
+          <figure class="" >
+            <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center" alt={product.title} src='../../../src/assets/img/images/prod_2.png' />
+          </figure>
+          <div class="absolute">
+            <h3 class="text-[#111] font-bold text-lg md:text-2xl">Mode Closet</h3>
+            <span class="text-[#333] font-normal md:font-medium text-sm md:text-medium">Shop,Explore and Create your Closet!  </span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full p-[1rem] flex flex-col items-center">
+        <div class="flex items-center">
+          <figure class="" >
+            <img src={product.images} class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center" alt={product.title} />
+          </figure>
+          <div class="flex items-center flex-col">
+            <h3 class="">{product.title}</h3>
+            <p class="" >Wish & Fashion. Let's Do It!</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 ">
+           <div class="w-full">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center" src={product.images} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+      </div>
+      
+      <div class="w-full p-[1rem] flex flex-col items-center">
+        <div class="flex items-center">
+          <figure class="" >
+            <img src={product.images} class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center" alt={product.title} />
+          </figure>
+          <div class="flex items-center flex-col">
+            <h3 class="">{product.title}</h3>
+            <p class="" >Colors, patterns and textures Don't as only Dreams.Imagine your Style</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 ">
+           <div class="w-full">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center" src={product.images} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+      </div>
+    )) }
+  </div>
 </section>
