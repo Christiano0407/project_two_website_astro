@@ -12,6 +12,7 @@ import { usersAPI } from "../ts/apiCategory";
 
 const products = await fullProducts();
 const allProducts = await fullProducts(); 
+const store = await fullProducts(); 
 const users = await usersAPI();
 
 ---
@@ -20,7 +21,7 @@ const users = await usersAPI();
   <main class="w-full h-full">
     <HeroPage title="Hero Section To Page Clothes." description="Hero Section to Page Clothes Products" />
     <ProductSale products={products.slice(0, 1)} />
-    <TopStore allProducts={allProducts.slice(0, 6)} />
+    <TopStore allProducts={allProducts.slice(0, 6)} store={store.slice(0, 1)} />
     <BannerStore />
   </main>
   <Footer />

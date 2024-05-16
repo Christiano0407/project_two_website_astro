@@ -15,20 +15,22 @@ const SchemesOfAllProducts = z.array(SchemesProductsAll);
 
 interface Props {
   allProducts: z.infer<typeof SchemesOfAllProducts >; 
+  store: z.infer<typeof SchemesOfAllProducts >; 
 }
 
-const { allProducts } = Astro.props;  
+const { allProducts, store } = Astro.props;  
 
 
 ---
 
 
 <section class="w-full p-[2rem] mx-auto my-[2rem]">
+  <h1 class="w-full p-[1rem] md:p-[2rem] font-bold md:font-black text-lg md:text-[3rem] text-center">Best Fashion Closet Store</h1>
   <div class="w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 grid-rows-1 md:grid-rows-2 gap-5 ">
      {allProducts.map(user => (
       <div class="">
-        <figure class="w-100% h-[20rem] ">
-         <img src={user.images} alt="" class="w-full h-full object-cover bg-cover bg-no-repeat bg-center aspect-square md:aspect-video " />
+        <figure class="w-100% ">
+         <img src={user.images} alt={user.title} class="w-full h-full object-cover bg-cover bg-no-repeat bg-center aspect-square md:aspect-video " />
         </figure>
         <div class="p-[1rem] flex flex-col items-center">
           <h2 class="">{user.title}</h2>
@@ -36,13 +38,13 @@ const { allProducts } = Astro.props;
       </div>
      ))}
   </div>
-
-  <div class="w-full grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-5 my-[1rem] mx-auto">
-    { allProducts.map(product => (
+  <!-- === Div Grid Products === -->
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 grid-rows-1 gap-5 my-[2rem] mx-auto">
+    { store.map(product => (
       <div class="w-full col-start-1 col-end-2 ">
         <div class="relative bg-slate-400 border outline-none rounded-2xl  transition-shadow hover:shadow-2xl ">
           <figure class="" >
-            <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square " alt={product.title} src='../../../src/assets/img/images/prod_2.png' />
+            <img class="w-full h-full rounded-xl bg-no-repeat bg-center bg-cover object-contain aspect-square " alt={product.title} src='../../../src/assets/img/images/prod_2.png' />
           </figure>
           <div class="absolute">
             <h3 class="text-[#111] font-bold text-lg md:text-2xl">Mode Closet</h3>
@@ -50,41 +52,128 @@ const { allProducts } = Astro.props;
           </div>
         </div>
       </div>
+      
       <div class="w-full p-[1rem] flex flex-col items-center">
-        <div class="flex items-center">
-          <figure class="" >
-            <img src='../../../src/assets/icons/logo_closet_1.png' class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video " alt={product.title} />
-          </figure>
-          <div class="flex items-center flex-col">
-            <h3 class="">{product.title}</h3>
-            <p class="" >Wish & Fashion. Let's Do It!</p>
+        <div class="w-full flex items-center my-[1rem]">
+          <div class=" w-full flex items-center flex-col">
+            <h3 class="text-black text-lg font-bold text-center">{product.title}</h3>
+            <p class="text-gray text-sm font-medium" >Wish & Fashion. Let's Do It!</p>
           </div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 ">
-           <div class="w-full border outline-none rounded-2xl transition-shadow hover:shadow-2xl ">
+        <div class="w-full flex items-center justify-between my-[1rem] mx-auto gap-5">
+          <div class="">
+          <div class="w-full border outline-none rounded-2xl">
               <figure class="">
-                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video " src={product.images} alt={product.title} />
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images} alt={product.title} />
               </figure>
            </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[1]} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[2]} alt={product.title} />
+              </figure>
+           </div>
+         </div>
+        </div>
+
+        <div class="w-full flex items-center my-[2rem]">
+          <div class=" w-full  flex items-center flex-col">
+            <h3 class="text-black text-lg font-bold ml-[1rem]">{product.title}</h3>
+            <p class="text-gray text-sm font-medium" >Wish & Fashion. Let's Do It!</p>
+          </div>
+        </div>
+        <div class="w-full flex items-center justify-between my-[1rem] mx-auto gap-5">
+          <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[1]} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[2]} alt={product.title} />
+              </figure>
+           </div>
+         </div>
         </div>
       </div>
       
       <div class="w-full p-[1rem] flex flex-col items-center">
-        <div class="flex items-center">
-          <figure class="" >
-            <img src='../../../src/assets/icons/logo_closet_1.png' class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video " alt={product.title} />
-          </figure>
-          <div class="flex items-center flex-col">
-            <h3 class="">{product.title}</h3>
-            <p class="" >Colors, patterns and textures Don't as only Dreams.Imagine your Style</p>
+        <div class="flex items-center my-[1rem]">
+          <div class=" w-full  flex items-center flex-col">
+            <h3 class="text-black text-lg font-bold " >{product.title}</h3>
+            <p class="text-gray text-sm font-medium" >Colors, patterns and textures Don't as only Dreams</p>
           </div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 ">
-           <div class="w-full border outline-none rounded-2xl transition-shadow hover:shadow-2xl">
+        <div class="w-full flex items-center justify-between my-[1rem] mx-auto gap-5 ">
+          <div class="">
+          <div class="w-full border outline-none rounded-2xl">
               <figure class="">
-                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video" src={product.images} alt={product.title} />
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images} alt={product.title} />
               </figure>
            </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[1]} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[2]} alt={product.title} />
+              </figure>
+           </div>
+         </div>
+        </div>
+
+        <div class="flex items-center my-[2rem]">
+          <div class=" w-full  flex items-center flex-col">
+            <h3 class="text-black text-lg font-bold " >{product.title}</h3>
+            <p class="text-gray text-sm font-medium" >Colors, patterns and textures Don't as only Dreams</p>
+          </div>
+        </div>
+        <div class="w-full flex items-center justify-between my-[1rem] mx-auto gap-5 ">
+          <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[1]} alt={product.title} />
+              </figure>
+           </div>
+        </div>
+        <div class="">
+          <div class="w-full border outline-none rounded-2xl">
+              <figure class="">
+                <img class="w-full h-full rounded-xl bg-no-repeat bg-cover bg-center aspect-square md:aspect-video object-cover " src={product.images[2]} alt={product.title} />
+              </figure>
+           </div>
+         </div>
         </div>
       </div>
     )) }
