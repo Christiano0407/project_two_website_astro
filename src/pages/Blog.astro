@@ -15,7 +15,8 @@ function generatePostUrl(post: MarkdownInstance<Record<string, any>>): string {
     return '#'; // Devuelve una URL por defecto o maneja el error según sea necesario
   }
   
-  const slug = post.file.split('/').pop()?.replace('.md', '');
+  const filePath = post.file || '';
+  const slug = filePath.split('/').pop()?.replace('.md', '');
   return slug ? `/newsletters/${slug}` : '#';
 }
 
@@ -29,7 +30,7 @@ Hemos cambiado la firma de la función generatePostUrl para aceptar MarkdownInst
     <div class="w-full max-w-[1024px] mx-auto">
       <img class="w-full max-w-[100%] h-auto object-cover bg-cover bg-center bg-no-repeat md:min-h-[24rem] aspect-square md:aspect-video" src="../../src/assets/img/blog/astro_blog.webp" alt="astro blog" />
     </div>
-    <article>
+    <section class="w-full p-[1rem]" >
       {allPostNeswletter.map(post => {
         const postUrl = generatePostUrl(post);
         return (
@@ -38,6 +39,6 @@ Hemos cambiado la firma de la función generatePostUrl para aceptar MarkdownInst
           </article>
         );
       })}
-    </article>
+    </section>
    </main>
 </Layouts>
