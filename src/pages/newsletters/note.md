@@ -1,7 +1,7 @@
 ---
 
 layout: ../../../src/layouts/Layouts.astro
-title: 'My First Blog Post - Fashion Trends Newsletter: What's New in Clothing Brands'
+title: 'My First Blog Post'
 pubDate: 05-04-2024
 description: "This is my first Post Blog to my Astro Blog"
 author: "Chris 04"
@@ -12,7 +12,7 @@ tags: ["astro", "blogging", "learning in public"]
 
 ---
 
-# My First Blog Post - Fashion Trends Newsletter: What's New in Clothing Brands
+## My First Blog Post
 
 Published on: 05-04-2024
 
