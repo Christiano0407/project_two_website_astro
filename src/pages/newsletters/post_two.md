@@ -8,7 +8,9 @@ author: "Chris 04"
 image:
   url: "../../../src/assets/img/web/web_1.jpg"
   alt: "The Astro logo with the word One."
-tags: ["Business", "blogging","E-commerce", "Fashion"]
+tags: ["Business", "E-commerce", "Fashion"]
+paragraph1: "E-commerce clothing has revolutionized the way we shop for clothes, offering a convenient, accessible, and diverse shopping experience. This note will explore the key aspects of this booming sector, from its advantages and challenges to the trends that are shaping it."
+paragraph2: "Convenience:Shopping for clothes from the comfort of home, without time or location constraints, is one of the main advantages of e-commerce."
 
 ---
 

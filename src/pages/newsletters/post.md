@@ -9,6 +9,9 @@ image:
   url: "../../../src/assets/img/web/web_3.jpg"
   alt: "The Astro logo with the word One."
 tags: ["Business", "blogging","E-commerce"]
+paragraph1: "Welcome to the May 2024 edition of our Fashion Trends Newsletter! As the seasons change, so do the trends in the world of fashion. We've scoured the latest collections and style reports to bring you the hottest trends from top clothing brands. Here's what's new and noteworthy this month"
+paragraph2: "Sustainability continues to be at the forefront of fashion, with more brands adopting eco-friendly practices. Brands like **Patagonia**, **Stella McCartney**, and **Reformation** are leading the way, incorporating recycled materials, ethical sourcing, and innovative manufacturing processes. This season, look out for organic cotton, recycled polyester, and biodegradable fabrics making waves
+"
 
 ---
 

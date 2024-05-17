@@ -1,0 +1,51 @@
+---
+import { string } from "zod";
+
+
+interface BlogPostastro {
+  title: string;
+  url: string;
+  description: string;
+  author: string;
+  pubDate: string;
+  image: string;
+  tags: string[];
+  paragraph1: string;
+  paragraph2: string; 
+}
+
+const { title, url, description, author, pubDate, image, tags, paragraph1, paragraph2 } = Astro.props
+
+---
+
+  <main class="flex-1 flex flex-col relative" >
+    <div class="w-full max-w-[1024px] mx-auto">
+      <img class="w-full max-w-[100%] h-auto object-cover bg-cover bg-center bg-no-repeat md:min-h-[24rem] aspect-square md:aspect-video" src={image} alt={title} />
+    </div>
+    <article class="p-[1rem]">
+      <header>
+        <h1>{title}</h1>
+        <span>{pubDate}</span>
+        <span>`Author: ${author}`</span>
+      </header>
+      <div class="my-[1rem] mx-auto">
+          <p>{paragraph1}</p>
+          <p>{paragraph2}</p>
+      </div>
+      <blockquote>
+        <p>{description}</p>
+      </blockquote>
+
+      <figure class="">
+        <img class="" src={image} alt={title} />
+      </figure>
+      
+      <footer class="w-full">
+        {
+          tags.map((tag:string) => {
+           <a class="bg-blue-100 text-blue-800 px-2 py-1 m-1" >{tag}</a>
+          })
+        }
+      </footer>
+    </article>
+   </main>

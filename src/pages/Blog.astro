@@ -18,6 +18,10 @@ function generatePostUrl(post: MarkdownInstance<Record<string, any>>): string {
   const filePath = post.file || '';
   const slug = filePath.split('/').pop()?.replace('.md', '');
   return slug ? `/newsletters/${slug}` : '#';
+
+ /*  const filePath = post.file || '';
+  const slug = filePath.split('/').pop()?.replace('.md', '');
+  return slug ? `/articles/${slug}` : '#'; */
 }
 
 /* Tipo MarkdownInstance:
@@ -34,9 +38,7 @@ Hemos cambiado la firma de la función generatePostUrl para aceptar MarkdownInst
       {allPostNeswletter.map(post => {
         const postUrl = generatePostUrl(post);
         return (
-          <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-4">
-            <BlogPost url={postUrl} title={post.frontmatter.title} description={post.frontmatter.description} author={post.frontmatter.author} pubDate={post.frontmatter.pubDate} image={post.frontmatter.image} tags={post.frontmatter.tags}  />
-          </article>
+          <BlogPost url={postUrl} title={post.frontmatter.title} description={post.frontmatter.description} author={post.frontmatter.author} pubDate={post.frontmatter.pubDate} image={post.frontmatter.image} tags={post.frontmatter.tags}  />
         );
       })}
     </section>
