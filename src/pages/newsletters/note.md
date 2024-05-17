@@ -6,9 +6,9 @@ pubDate: 05-04-2024
 description: "This is my first Post Blog to my Astro Blog"
 author: "Chris 04"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  url: "../../../src/assets/img/web/web_2.jpg"
   alt: "The Astro logo with the word One."
-tags: ["astro", "blogging", "learning in public"]
+tags: ["Business", "blogging","E-commerce"]
 
 ---
 

@@ -25,17 +25,17 @@ Hemos cambiado la firma de la función generatePostUrl para aceptar MarkdownInst
 
 ---
 
-<Layouts title={pageTitle} description="Page Website Blog">
+<Layouts title={pageTitle} description="Page Website Blog"> 
   <main class="flex-1 flex flex-col relative" >
     <div class="w-full max-w-[1024px] mx-auto">
       <img class="w-full max-w-[100%] h-auto object-cover bg-cover bg-center bg-no-repeat md:min-h-[24rem] aspect-square md:aspect-video" src="../../src/assets/img/blog/astro_blog.webp" alt="astro blog" />
     </div>
-    <section class="w-full p-[1rem]" >
+    <section class="w-full p-[1rem] grid grid-cols-2 md:grid-cols-3 grid-flow-row gap-5 " >
       {allPostNeswletter.map(post => {
         const postUrl = generatePostUrl(post);
         return (
-          <article class="mt-4">
-            <BlogPost url={postUrl} title={post.frontmatter.title} />
+          <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-4">
+            <BlogPost url={postUrl} title={post.frontmatter.title} description={post.frontmatter.description} author={post.frontmatter.author} pubDate={post.frontmatter.pubDate} image={post.frontmatter.image} tags={post.frontmatter.tags}  />
           </article>
         );
       })}
