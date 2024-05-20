@@ -5,6 +5,7 @@ export default {
 		extend: {
 			gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, minmax(15rem, 1fr))',
+				'sideBar': '15rem, 1fr',
       },
 		},
 	},

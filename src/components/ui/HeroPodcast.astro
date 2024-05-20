@@ -4,14 +4,12 @@ import { productsApi } from "../../ts/api";
 import { usersAPI } from "../../ts/apiCategory";
 
 
-
-
 ---
 
 <section class="w-full p-[1rem] relative grid grid-cols-[15rem, 1fr] gap-5 ">
 
 <!-- === SideBar Nav === -->
-  <aside class="w-full h-screen fixed left-0 col-start-1 col-end-2 ">
+  <aside class="w-60 h-screen fixed left-0 col-start-1 col-end-2 ">
     <div class="h-full p-[1rem] overflow-y-auto">
       <ul class="flex flex-col items-center space-y-2 ">
         <li>
@@ -80,17 +78,20 @@ import { usersAPI } from "../../ts/apiCategory";
   </aside>
 
   <!-- === Main Content === -->
-  <div class="w-full p-[1rem] grid grid-cols-2 grid-flow-row col-start-2 col-end-4 ">
-    <div class="w-full grid grid-cols-1 grid-rows-2 gap-[1rem] p-[0.5rem]"></div>
-    <div class="w-full ">
-      <figure class="">
-        <img class="w-full object-cover bg-cover bg-no-repeat bg-center " src="" alt=""/>
+  <div class="w-full h-screen ml-60 p-[1rem] grid grid-cols-2 grid-flow-row col-start-2 col-end-3 ">
+    <div class="w-full grid grid-cols-1 grid-rows-2 gap-[1rem] p-[0.5rem] ">
+
+    </div>
+
+    <div class="w-full">
+      <figure class="w-full h-full">
+        <img class="w-full h-full object-cover bg-cover bg-no-repeat bg-center aspect-square " src="../../../src/assets/img/web/girl_podcast.jpg" alt="images podcast"/>
       </figure>
     </div>
   </div>
 
 <!-- === Podcast Main === -->
-  <div class="w-full h-[4rem] p-[1rem] absolute bottom-0 z-10">
+  <div class="w-full h-[14rem] p-[1rem] absolute bottom-0 z-10">
     <div class="flex items-center"></div>
   </div>
 
