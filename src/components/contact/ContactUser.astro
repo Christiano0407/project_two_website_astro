@@ -1,0 +1,22 @@
+---
+
+import Footer from "../Footer.astro"
+import ContactHeader from "../../sections/contact/ContactHeader.astro"
+import ContactMain from "../../sections/contact/ContactMain.astro"
+
+interface Props {
+  sectionName: string, 
+  description: string
+}
+
+const { sectionName, description } = Astro.props; 
+
+
+---
+
+  <main class="w-full h-100%" >
+    <ContactHeader />
+    <ContactMain />
+  </main>
+  <Footer /> 
+
