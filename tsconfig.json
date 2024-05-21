@@ -3,6 +3,8 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true, 
+    "types": ["jest", "@testing-library/jest-dom"]
   }, 
+  "include": ["src"]
 }

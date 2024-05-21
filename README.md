@@ -52,8 +52,102 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat)
 =======
+
 # project_two_website_astro
+
 Project Web ( Test ) with astro.  Project Of Prove With Astro. I will Use an API (Platzi) for the Website of Products (Test).
 >>>>>>> a649412b7d1414aea4fb8d6a741dec5e24fc1c57
+
+## Testing With Jest
+
+> Using Jest To My Project Web (Install Jest To Using With: Astro, Typescript, React, TailwindCSS )
+
+```bash
+
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom babel-jest @babel/preset-env @babel/preset-react @babel/preset-typescript ts-jest identity-obj-proxy
+
+```
+
+> Configure with Babel;
+
+```javascript
+
+module.exports = {
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react',
+    '@babel/preset-typescript'
+  ],
+};
+
+
+```
+
+> Configure With Jest:
+
+```javascript
+
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // Para manejar los estilos
+    '^@/(.*)$': '<rootDir>/src/$1' // Ajusta según tu configuración de paths
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest', // Usa ts-jest para transformar archivos TypeScript
+    '^.+\\.jsx?$': 'babel-jest', // Usa babel-jest para transformar archivos JavaScript
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!(@testing-library)/)'
+  ],
+};
+
+```
+
+> Testing Library:
+
+```javascript
+import '@testing-library/jest-dom/extend-expect';
+```
+
+> Configure With Typescript:
+
+```javascript
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "include": ["src"]
+}
+
+```
+
+> Configure With Tailwind CSS:
+
+```javascript
+module.exports = {
+  content: [
+    './src/**/*.{js,jsx,ts,tsx,astro}'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+> Configure Package.JSON
+
+```json
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+
+```
