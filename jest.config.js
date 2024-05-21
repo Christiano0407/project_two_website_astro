@@ -1,16 +1,16 @@
 export default {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // Para manejar los estilos
-    '^@/(.*)$': '<rootDir>/src/$1' // Ajusta según tu configuración de paths
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest', // Usa ts-jest para transformar archivos TypeScript
-    '^.+\\.jsx?$': 'babel-jest', // Usa babel-jest para transformar archivos JavaScript
+    '^.+\\.tsx?$': 'ts-jest',
   },
   transformIgnorePatterns: [
     'node_modules/(?!(@testing-library)/)'
   ],
 };
+
