@@ -60,6 +60,16 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 Project Web ( Test ) with astro.  Project Of Prove With Astro. I will Use an API (Platzi) for the Website of Products (Test).
 >>>>>>> a649412b7d1414aea4fb8d6a741dec5e24fc1c57
 
+## Validation & Test to Data With ZOD
+
+> Install ZOD (Typescript)
+
+```bash
+
+npm i zod
+
+```
+
 ## Testing With Jest
 
 > Using Jest To My Project Web (Install Jest To Using With: Astro, Typescript, React, TailwindCSS )
