@@ -12,8 +12,5 @@ export default {
   transformIgnorePatterns: [
     'node_modules/(?!(@testing-library)/)'
   ],
-  testMatch: [
-    '**/?(*.)+(test).[jt]s?(x)'
-  ],
 };
 
