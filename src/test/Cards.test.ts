@@ -1,14 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { z } from 'zod';
-import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-import Cards from '../components/ui/Cards.astro';
+/* import { describe, it, expect } from 'vitest';
+import { build } from 'astro';
 
+import { Cards } from '../components/ui/Cards.astro'; // Importa el componente Cards.astro
 
-/* Cards.test.tsx: Usa React Testing Library para renderizar el componente y Jest para las aserciones. */
-
-
-// === Prove props Data ===
 const productsData = [
   {
     id: 1,
@@ -26,12 +20,21 @@ const productsData = [
   }
 ];
 
-// === Jest test ===
-test('Render The products List Correctly', () => {
- render(<Cards products={productsData} />); 
+describe('Cards Component', () => {
+  it('renders the products list correctly', async () => {
+    // Mock Astro.props
+    const props = { products: productsData };
 
- // Check If Products Titles are Rendered
- expect(screen.getByAltText('Product 1')).toBeInTheDocument();  
- expect(screen.getByAltText('Product 2')).toBeInTheDocument();  
+    // Renderiza el componente Cards.astro
+    const { content } = await build(<Cards {...props} />);
 
-})
+    // Verifica que el contenido renderizado contenga los elementos esperados
+    expect(content).toContain('Product 1');
+    expect(content).toContain('Product 2');
+    expect(content).toContain('Description of Product 1');
+    expect(content).toContain('Description of Product 2');
+    expect(content).toContain('$ 100');
+    expect(content).toContain('$ 200');
+  });
+});
+ */

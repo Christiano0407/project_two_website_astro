@@ -70,6 +70,18 @@ npm i zod
 
 ```
 
+## Test With Vitest
+
+> Testing With Vite
+
+[Vitest](https://vitest.dev/)
+
+```bash
+
+npm install -D vitest
+
+``
+
 ## Testing With Jest
 
 > Using Jest To My Project Web (Install Jest To Using With: Astro, Typescript, React, TailwindCSS )
