@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { z } from 'zod';
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import Cards from '../../../src/components/ui/Cards.astro';
+import Cards from '../components/ui/Cards.astro';
 
 
 /* Cards.test.tsx: Usa React Testing Library para renderizar el componente y Jest para las aserciones. */
