@@ -60,6 +60,78 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 Project Web ( Test ) with astro.  Project Of Prove With Astro. I will Use an API (Platzi) for the Website of Products (Test).
 >>>>>>> a649412b7d1414aea4fb8d6a741dec5e24fc1c57
 
+# Mode Closet
+
+H1 Mode Closet
+
+=============
+
+# Project Astro
+
+> First Project Web with Astro. I will Worked with the API of Platzi (Platzi Fake) to products (Clothes).
+
+![Logo_img](./src/assets/icons/logo_closet_1.png?width=250&height=200)
+
+> Init Project In Astro
+
+[Astro Framework](https://astro.build/)
+
+```bash
+
+npm create astro@latest
+
+```
+
+> Platzi (Website) & Platzi Fake API
+
+[Platzi](https://platzi.com/new-home/)
+
+[Platzi_fake](https://fakeapi.platzi.com/)
+
+## Tools To The Project
+
+> Tailwind CSS
+
+[TailwindCSS](https://tailwindcss.com/)
+
+> Add Tailwind CSS with Astro
+
+[Astro_integration](https://docs.astro.build/en/guides/integrations-guide/)
+
+```bash
+
+npx astro add tailwind
+
+npm install @astrojs/tailwind tailwindcss 
+
+```
+
+> React Js With Astro
+
+[React](https://react.dev/)
+
+[React_ Astro](https://docs.astro.build/en/guides/integrations-guide/react/)
+
+```bash
+
+npx astro add react
+
+npm install @astrojs/react
+
+```
+
+> Astro Configuration To React Js
+
+```js
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+
+export default defineConfig({
+  // ...
+  integrations: [react()],
+});
+```
+
 ## Validation & Test to Data With ZOD
 
 > Install ZOD (Typescript)
@@ -80,11 +152,13 @@ npm i zod
 
 npm install -D vitest
 
-``
-
-## Testing With Jest
+```
 
 > Using Jest To My Project Web (Install Jest To Using With: Astro, Typescript, React, TailwindCSS )
+
+[js](https://jestjs.io/)
+
+> Install Jest to Testing
 
 ```bash
 
@@ -173,3 +247,9 @@ module.exports = {
 }
 
 ```
+
+### Project Finished (Images Mobile, Tablet & Desktop)
+
+> Project Images:
+
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
