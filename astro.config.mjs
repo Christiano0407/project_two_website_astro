@@ -7,6 +7,8 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react({
-    include: ['**/react/*']
-  }), mdx()]
+    include: ['**/react/*']}), 
+    mdx(), 
+  ], 
+  prefetch: true // Puedes habilitar la precarga con la configuración
 });
