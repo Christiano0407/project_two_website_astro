@@ -250,6 +250,46 @@ module.exports = {
 
 ### Project Finished (Images Mobile, Tablet & Desktop)
 
-> Project Images:
+> Home: Landing Page
 
-![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+![home](./src/assets/img_final/localhost_4321_%20(2).png)
+
+![home_landing](./src/assets/img_final/localhost_4321_%20(1).png)
+
+> Clothes Page: 
+
+![clothes](./src/assets/img_final/localhost_4321_%20(10).png)
+
+![clothes_two](./src/assets/img_final/localhost_4321_%20(11).png)
+
+![clothes_two](./src/assets/img_final/localhost_4321_%20(12).png)
+
+![clothes_three](./src/assets/img_final/localhost_4321_%20(4).png)
+
+> Blog Page:
+
+![blog](./src/assets/img_final/localhost_4321_%20(6).png)
+
+> Podcast Page:
+
+![podcast](./src/assets/img_final/localhost_4321_%20(7).png)
+
+> Contact Page:
+
+![Contact](./src/assets/img_final/localhost_4321_%20(9).png)
+
+#### Note
+
+> Project Note:
+
+- This Project Only was created to practice for first time with the Framework Astro Js.
+
+ The UI it's will don't better in design because to only to prove Astro.
+
+- This project don't exist in Production. Thank you.
+
+#### Deploy Your Astro Site
+
+> Astro Documentation
+
+[Deploy](https://docs.astro.build/en/guides/deploy/)
